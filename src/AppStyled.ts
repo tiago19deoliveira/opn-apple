@@ -3,6 +3,9 @@ import styled from "styled-components";
 interface ImageProductAppleType {
   widthImage?: string;
 }
+interface SpamDescriptionProductType {
+  type?: string;
+}
 
 export const Header = styled.div`
   height: 48px;
@@ -63,13 +66,13 @@ export const TextOptionsProductApple = styled.a`
   font-size: 13px;
 `;
 
-export const SpamDescriptionProduct = styled.span`
+export const SpamDescriptionProduct = styled.span<SpamDescriptionProductType>`
   font-family: MyriadProRegular;
   color: #f56300;
-  font-size: 10px;
-  font-weigth: 400;
-  position: absolute;
-  margin-top: 76px;
+  font-size: ${(props)=> props.type ==="span-new-option" ? "10px" : "17px"};
+  font-weigth: ${(props) => props.type ==="span-new-option" ? "400" : "bold"};
+  position: ${(props)=> props.type === "span-new-option" ? "absolute" : "static"};
+  margin-top: ${(props) => props.type === "span-new-option" ? "76px" : "0"};
 `;
 
 export const BlockAppleEducation = styled.div`
@@ -79,23 +82,22 @@ export const BlockAppleEducation = styled.div`
   justify-content: center;
   align-items: center;
   background: #f5f5f7;
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(0, 0, 0, 0.9)
   margin-top: 20px;
   letter-spacing: -0.16em;
-
-  p {
-    font-size: 14px;
+  
+  p{
     font-family: MyriadProRegular;
-    font-weigth: 400;
+    font-size: 14px; 
+    font-weight: 400;
 
-    a {
-      color: #06c;
-      text-decoration: none;
+    a{
+     color: #06c
+     text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
-    }
-  }
+     a:hover{
+     text-decoration: underline;
+     }
 `;
 
 export const AppleEducationBlock = styled.div`
@@ -106,3 +108,33 @@ export const AppleEducationBlock = styled.div`
   align-items: center;
   background: #f5f5f7;
 `;
+
+export const BannerAria = styled.div`
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding:60px 0;
+  h1{
+   font-size: 56px;
+   color: #1d1d1f;
+   font-family: MyriadProRegular;
+   font-weight: 400;
+  }
+
+  h2{
+   font-size: 28px;
+   color: #1d1d1f;
+   font-family: MyriadProRegular;
+   font-weight: 400;
+   margin-top: -40px;
+  }
+
+  p{
+   font-size: 17px;
+   color: #1d1d1f;
+   font-family: MyriadProLight;
+   font-weight: 600;
+   margin-top: -2px
+  }
+  `;

@@ -13,6 +13,7 @@ import {
   SpamDescriptionProduct,
   BlockAppleEducation,
   AppleEducationBlock,
+  BannerAria,
 } from "./AppStyled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple } from "@fortawesome/free-brands-svg-icons";
@@ -117,7 +118,7 @@ function App() {
         <ItemOptionProduct>
           <ImageProductApple src={mcAir} widthImage="78px" alt="iMac" />
           <TextOptionsProductApple>MacBookAir</TextOptionsProductApple>
-          <SpamDescriptionProduct>Novo</SpamDescriptionProduct>
+          <SpamDescriptionProduct type="span-new-option">Novo</SpamDescriptionProduct>
         </ItemOptionProduct>
         <ItemOptionProduct>
           <ImageProductApple src={iMac} widthImage="40px" alt="iMac" />
@@ -160,14 +161,20 @@ function App() {
 
       <BlockAppleEducation>
         <p>
-          <a href="#">
-            Comprar!
-            <FontAwesomeIcon style={{ fontSize: 9 }} icon={faChevronRight} />
-          </a>
-          Arrohcado
+          economize na compra do macbook air e do macbook pro de 13 polegadas na apple store educacional.
+           <a href="https://www.apple.com.br" target="_blank" rel="noopener noreferrer">
+            Comprar!<FontAwesomeIcon style={{ fontSize: 9 }} icon={faChevronRight} />
+          </a> 
         </p>
       </BlockAppleEducation>
-    </div>
+
+      <BannerAria>
+        <SpamDescriptionProduct>Novo teste</SpamDescriptionProduct>
+        <h1>MacBook Air</h1>
+        <h2>Livree,leve,voa</h2>      
+        <p> A partir de R$1300,99</p>
+      </BannerAria>
+    </div> 
   );
 }
 
