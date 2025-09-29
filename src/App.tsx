@@ -14,6 +14,8 @@ import {
   BlockAppleEducation,
   AppleEducationBlock,
   BannerAria,
+  PurchaseButton,
+  BannerAreaButtons,
 } from "./AppStyled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple } from "@fortawesome/free-brands-svg-icons";
@@ -32,6 +34,7 @@ import macOs from "./assets/images/macOs.svg";
 import mcShop from "./assets/images/macShop.svg";
 import mcStudio from "./assets/images/macStudio.svg";
 import mcAir from "./assets/images/macbookAir.svg";
+import macBook from "./assets/images/macbook.jpeg";
 
 function App() {
   return (
@@ -171,8 +174,14 @@ function App() {
       <BannerAria>
         <SpamDescriptionProduct>Novo teste</SpamDescriptionProduct>
         <h1>MacBook Air</h1>
-        <h2>Livree,leve,voa</h2>      
+        <h2>Livre, leve, voa</h2>      
         <p> A partir de R$1300,99</p>
+       <BannerAreaButtons>
+        <PurchaseButton background="#0071e3" color="white">Comprar</PurchaseButton>
+        <PurchaseButton background="transparent" underline={true} color="#0071e3">Saiba Mais <FontAwesomeIcon style={{ fontSize: 11, marginLeft:5 }} icon={faChevronRight} /></PurchaseButton>
+       </BannerAreaButtons>
+
+       <ImageProductApple src={macBook} widthImage="450px" marginTop="100px"/>
       </BannerAria>
     </div> 
   );

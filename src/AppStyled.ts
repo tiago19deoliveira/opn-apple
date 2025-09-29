@@ -2,9 +2,16 @@ import styled from "styled-components";
 
 interface ImageProductAppleType {
   widthImage?: string;
+  marginTop?:string;
 }
 interface SpamDescriptionProductType {
   type?: string;
+}
+
+interface PurchaseButtonType{
+  background: string;
+  color:string;
+  underline?: boolean;
 }
 
 export const Header = styled.div`
@@ -39,13 +46,12 @@ export const TextHeader = styled.div`
 `;
 
 export const ProductsOptionsList = styled.div`
-  heigth: 116px;
+  height: 116px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 30px;
-  background-color: "red";
 `;
 
 export const ItemOptionProduct = styled.div`
@@ -58,6 +64,7 @@ export const ItemOptionProduct = styled.div`
 
 export const ImageProductApple = styled.img<ImageProductAppleType>`
   width: ${(props) => (props.widthImage ? props.widthImage : "40px")};
+  margin-top: ${(props) => (props.marginTop ? props.marginTop : "0px")};
 `;
 
 export const TextOptionsProductApple = styled.a`
@@ -70,19 +77,19 @@ export const SpamDescriptionProduct = styled.span<SpamDescriptionProductType>`
   font-family: MyriadProRegular;
   color: #f56300;
   font-size: ${(props)=> props.type ==="span-new-option" ? "10px" : "17px"};
-  font-weigth: ${(props) => props.type ==="span-new-option" ? "400" : "bold"};
+  font-weight: ${(props) => props.type ==="span-new-option" ? "400" : "bold"};
   position: ${(props)=> props.type === "span-new-option" ? "absolute" : "static"};
   margin-top: ${(props) => props.type === "span-new-option" ? "76px" : "0"};
 `;
 
 export const BlockAppleEducation = styled.div`
-  heigth: 39px;
+  height: 39px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   background: #f5f5f7;
-  color: rgba(0, 0, 0, 0.9)
+  color: rgba(0, 0, 0, 0.9);
   margin-top: 20px;
   letter-spacing: -0.16em;
   
@@ -92,7 +99,7 @@ export const BlockAppleEducation = styled.div`
     font-weight: 400;
 
     a{
-     color: #06c
+     color: #06c;
      text-decoration: none;
     }
      a:hover{
@@ -135,6 +142,37 @@ export const BannerAria = styled.div`
    color: #1d1d1f;
    font-family: MyriadProLight;
    font-weight: 600;
-   margin-top: -2px
+   margin-top: -2px;
   }
+  `;
+  
+  export const PurchaseButton = styled.button<PurchaseButtonType>`
+   cursor: pointer;
+   display: inline-block;
+   text-align: center;
+   white-space: nowrap;
+   font-size: 17px;
+   font-family: MyriadProRegular;
+   line-height: 1.17648;
+   font-weigth: 400;
+   color: ${(props) => props.color};
+   background:${(props) => props.background};
+   padding-left: 16px;
+   padding-right:16px;
+   padding-top:8px;
+   padding-bottom:8px;
+   border-radius:980px;
+   border:none;
+   &:hover{
+   text-decoration:${(props)=> props.underline ? 'underline': 'none'}
+   }
+`;
+
+export const BannerAreaButtons = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+  gap:10px;
+  
   `;
