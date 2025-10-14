@@ -2,15 +2,16 @@ import styled from "styled-components";
 
 interface ImageProductAppleType {
   widthImage?: string;
-  marginTop?:string;
+  marginTop?: string;
 }
 interface SpamDescriptionProductType {
-  type?: string;
+  marginTop?: string;
+  type?:string;
 }
 
-interface PurchaseButtonType{
+interface PurchaseButtonType {
   background: string;
-  color:string;
+  color: string;
   underline?: boolean;
 }
 
@@ -76,10 +77,12 @@ export const TextOptionsProductApple = styled.a`
 export const SpamDescriptionProduct = styled.span<SpamDescriptionProductType>`
   font-family: MyriadProRegular;
   color: #f56300;
-  font-size: ${(props)=> props.type ==="span-new-option" ? "10px" : "17px"};
-  font-weight: ${(props) => props.type ==="span-new-option" ? "400" : "bold"};
-  position: ${(props)=> props.type === "span-new-option" ? "absolute" : "static"};
-  margin-top: ${(props) => props.type === "span-new-option" ? "76px" : "0"};
+  font-size: ${(props) => (props.marginTop === "span-new-option" ? "10px" : "17px")};
+  font-weight: ${(props) =>
+    props.marginTop === "span-new-option" ? "400" : "bold"};
+  position: ${(props) =>
+    props.marginTop === "span-new-option" ? "absolute" : "static"};
+  margin-top: ${(props) => props.marginTop};
 `;
 
 export const BlockAppleEducation = styled.div`
@@ -121,58 +124,89 @@ export const BannerAria = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding:60px 0;
-  h1{
-   font-size: 56px;
-   color: #1d1d1f;
-   font-family: MyriadProRegular;
-   font-weight: 400;
+  padding: 60px 0;
+  h1 {
+    font-size: 56px;
+    color: #1d1d1f;
+    font-family: MyriadProRegular;
+    font-weight: 400;
   }
 
-  h2{
-   font-size: 28px;
-   color: #1d1d1f;
-   font-family: MyriadProRegular;
-   font-weight: 400;
-   margin-top: -40px;
+  h2 {
+    font-size: 28px;
+    color: #1d1d1f;
+    font-family: MyriadProRegular;
+    font-weight: 400;
+    margin-top: -40px;
   }
 
-  p{
-   font-size: 17px;
-   color: #1d1d1f;
-   font-family: MyriadProLight;
-   font-weight: 600;
-   margin-top: -2px;
+  p {
+    font-size: 17px;
+    color: #1d1d1f;
+    font-family: MyriadProLight;
+    font-weight: 600;
+    margin-top: -2px;
   }
-  `;
-  
-  export const PurchaseButton = styled.button<PurchaseButtonType>`
-   cursor: pointer;
-   display: inline-block;
-   text-align: center;
-   white-space: nowrap;
-   font-size: 17px;
-   font-family: MyriadProRegular;
-   line-height: 1.17648;
-   font-weigth: 400;
-   color: ${(props) => props.color};
-   background:${(props) => props.background};
-   padding-left: 16px;
-   padding-right:16px;
-   padding-top:8px;
-   padding-bottom:8px;
-   border-radius:980px;
-   border:none;
-   &:hover{
-   text-decoration:${(props)=> props.underline ? 'underline': 'none'}
-   }
+`;
+
+export const PurchaseButton = styled.button<PurchaseButtonType>`
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 17px;
+  font-family: MyriadProRegular;
+  line-height: 1.17648;
+  font-weigth: 400;
+  color: ${(props) => props.color};
+  background: ${(props) => props.background};
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 980px;
+  border: none;
+  &:hover {
+    text-decoration: ${(props) => (props.underline ? "underline" : "none")};
+  }
 `;
 
 export const BannerAreaButtons = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:center;
-  gap:10px;
-  
-  `;
+  justify-content: center;
+  gap: 10px;
+`;
+
+export const BannerMacPro = styled.div`
+  height: 700px;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 54px 0;
+  h1 {
+    font-size: 56px;
+    color: white;
+    font-family: MyriadProRegular;
+    font-weight: bold;
+    margin-top: 2px;
+  }
+
+  h2 {
+    font-size: 28px;
+    color: white;
+    font-family: MyriadProRegular;
+    font-weight: 400;
+    margin-top: -5px;
+  }
+
+  p {
+    font-size: 17px;
+    color: white;
+    font-family: MyriadProLight;
+    font-weight: 600;
+    margin-top: -2px;
+  }
+`;

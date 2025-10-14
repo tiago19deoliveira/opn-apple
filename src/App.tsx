@@ -16,6 +16,7 @@ import {
   BannerAria,
   PurchaseButton,
   BannerAreaButtons,
+  BannerMacPro,
 } from "./AppStyled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple } from "@fortawesome/free-brands-svg-icons";
@@ -35,6 +36,7 @@ import mcShop from "./assets/images/macShop.svg";
 import mcStudio from "./assets/images/macStudio.svg";
 import mcAir from "./assets/images/macbookAir.svg";
 import macBook from "./assets/images/macbook.jpeg";
+import macPro from "./assets/images/macpro.jpeg";
 
 function App() {
   return (
@@ -121,7 +123,7 @@ function App() {
         <ItemOptionProduct>
           <ImageProductApple src={mcAir} widthImage="78px" alt="iMac" />
           <TextOptionsProductApple>MacBookAir</TextOptionsProductApple>
-          <SpamDescriptionProduct type="span-new-option">Novo</SpamDescriptionProduct>
+          <SpamDescriptionProduct marginTop="78px">Novo</SpamDescriptionProduct>
         </ItemOptionProduct>
         <ItemOptionProduct>
           <ImageProductApple src={iMac} widthImage="40px" alt="iMac" />
@@ -164,26 +166,72 @@ function App() {
 
       <BlockAppleEducation>
         <p>
-          economize na compra do macbook air e do macbook pro de 13 polegadas na apple store educacional.
-           <a href="https://www.apple.com.br" target="_blank" rel="noopener noreferrer">
-            Comprar!<FontAwesomeIcon style={{ fontSize: 9 }} icon={faChevronRight} />
-          </a> 
+          economize na compra do macbook air e do macbook pro de 13 polegadas na
+          apple store educacional.
+          <a
+            href="https://www.apple.com.br"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Comprar!
+            <FontAwesomeIcon style={{ fontSize: 9 }} icon={faChevronRight} />
+          </a>
         </p>
       </BlockAppleEducation>
 
       <BannerAria>
         <SpamDescriptionProduct>Novo teste</SpamDescriptionProduct>
-        <h1>MacBook Air</h1>
-        <h2>Livre, leve, voa</h2>      
-        <p> A partir de R$1300,99</p>
-       <BannerAreaButtons>
-        <PurchaseButton background="#0071e3" color="white">Comprar</PurchaseButton>
-        <PurchaseButton background="transparent" underline={true} color="#0071e3">Saiba Mais <FontAwesomeIcon style={{ fontSize: 11, marginLeft:5 }} icon={faChevronRight} /></PurchaseButton>
-       </BannerAreaButtons>
+        <h1>MacBook Pro 13 pol</h1>
+        <h2>Pro em qualquer lugar</h2>
+        <p> A partir de R$15.299</p>
+        <BannerAreaButtons>
+          <PurchaseButton background="#0071e3" color="white">
+            Comprar
+          </PurchaseButton>
+          <PurchaseButton
+            background="transparent"
+            underline={true}
+            color="#0071e3"
+          >
+            Saiba Mais{" "}
+            <FontAwesomeIcon
+              style={{ fontSize: 11, marginLeft: 5 }}
+              icon={faChevronRight}
+            />
+          </PurchaseButton>
+        </BannerAreaButtons>
 
-       <ImageProductApple src={macBook} widthImage="450px" marginTop="100px"/>
+        <ImageProductApple src={macBook} widthImage="450px" marginTop="100px" />
       </BannerAria>
-    </div> 
+
+      <BannerMacPro>
+        <SpamDescriptionProduct marginTop="28px">
+          Novo teste
+        </SpamDescriptionProduct>
+        <h1>MacBook Air</h1>
+        <h2>Livre, leve, voa</h2>
+        <p> A partir de R$1300,99</p>
+
+        <BannerAreaButtons>
+          <PurchaseButton background="#0071e3" color="white">
+            Comprar
+          </PurchaseButton>
+          <PurchaseButton
+            background="transparent"
+            underline={true}
+            color="#0071e3"
+          >
+            Saiba Mais{" "}
+            <FontAwesomeIcon
+              style={{ fontSize: 11, marginLeft: 5 }}
+              icon={faChevronRight}
+            />
+          </PurchaseButton>
+        </BannerAreaButtons>
+
+        <ImageProductApple src={macPro} widthImage="850px" marginTop="15px" />
+      </BannerMacPro>
+    </div>
   );
 }
 
