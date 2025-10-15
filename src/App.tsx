@@ -121,12 +121,12 @@ function App() {
         <ItemOptionProduct>
           <ImageProductApple src={mcAir} widthImage="78px" alt="iMac" />
           <TextOptionsProductApple>MacBookAir</TextOptionsProductApple>
-          <SpamDescriptionProduct marginTop="0px">Novo</SpamDescriptionProduct>
+          {/* <SpamDescriptionProduct marginTop="0px">Novo</SpamDescriptionProduct> */}
         </ItemOptionProduct>
         <ItemOptionProduct>
           <ImageProductApple src={iMac} widthImage="40px" alt="iMac" />
           <TextOptionsProductApple>IMac</TextOptionsProductApple>
-          <SpamDescriptionProduct>Novo</SpamDescriptionProduct>
+          {/* <SpamDescriptionProduct>Novo</SpamDescriptionProduct> */}
         </ItemOptionProduct>
         <ItemOptionProduct>
           <ImageProductApple src={macMini} widthImage="30px" alt="macMini" />
