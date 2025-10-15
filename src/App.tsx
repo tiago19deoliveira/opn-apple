@@ -10,7 +10,6 @@ import {
   TextOptionsProductApple,
   SpamDescriptionProduct,
   BlockAppleEducation,
-  AppleEducationBlock,
   BannerAria,
   PurchaseButton,
   BannerAreaButtons,
