@@ -1,6 +1,4 @@
-import React from "react";
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-import logo from "./logo.svg";
 import "./fonts.css";
 import {
   Header,
@@ -123,7 +121,7 @@ function App() {
         <ItemOptionProduct>
           <ImageProductApple src={mcAir} widthImage="78px" alt="iMac" />
           <TextOptionsProductApple>MacBookAir</TextOptionsProductApple>
-          <SpamDescriptionProduct marginTop="78px">Novo</SpamDescriptionProduct>
+          <SpamDescriptionProduct marginTop="0px">Novo</SpamDescriptionProduct>
         </ItemOptionProduct>
         <ItemOptionProduct>
           <ImageProductApple src={iMac} widthImage="40px" alt="iMac" />
