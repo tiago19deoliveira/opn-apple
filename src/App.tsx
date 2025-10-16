@@ -14,6 +14,9 @@ import {
   PurchaseButton,
   BannerAreaButtons,
   BannerMacPro,
+  SelectMac,
+  OptionsMac,
+  OptionMac,
 } from "./AppStyled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple } from "@fortawesome/free-brands-svg-icons";
@@ -34,8 +37,11 @@ import mcStudio from "./assets/images/macStudio.svg";
 import mcAir from "./assets/images/macbookAir.svg";
 import macBook from "./assets/images/macbook.jpeg";
 import macPro from "./assets/images/macpro.jpeg";
+import { useState } from "react";
 
 function App() {
+  const[optionMac,setOptionMac] = useState<boolean>(true);
+
   return (
     <div className="App">
       <Header>
@@ -228,6 +234,15 @@ function App() {
 
         <ImageProductApple src={macPro} widthImage="850px" marginTop="15px" />
       </BannerMacPro>
+
+      <SelectMac>
+        <h1>Qual é o Mac ideal para você?</h1>
+
+        <OptionsMac>
+          <OptionMac selected={optionMac} onClick={() => setOptionMac(true)}>Notebook</OptionMac>
+          <OptionMac selected={!optionMac}onClick={() => setOptionMac(false)}>Desktop</OptionMac>
+        </OptionsMac>
+      </SelectMac>
     </div>
   );
 }
