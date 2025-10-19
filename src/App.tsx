@@ -15,8 +15,13 @@ import {
   BannerAreaButtons,
   BannerMacPro,
   SelectMac,
-  OptionsMac,
+  OptionType,
   OptionMac,
+  OptionsType,
+  OptionsMac,
+  OptionMacImage,
+  ColorsOptionsMac,
+  ColorOptionMac,
 } from "./AppStyled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faApple } from "@fortawesome/free-brands-svg-icons";
@@ -37,10 +42,14 @@ import mcStudio from "./assets/images/macStudio.svg";
 import mcAir from "./assets/images/macbookAir.svg";
 import macBook from "./assets/images/macbook.jpeg";
 import macPro from "./assets/images/macpro.jpeg";
+import mackBookImage from "./assets/images/macBookImage.png";
+import iconMacM1 from "./assets/images/icon-mac-m1.png";
+import iconMacM2 from "./assets/images/icon-mac-m2.png";
+
 import { useState } from "react";
 
 function App() {
-  const[optionMac,setOptionMac] = useState<boolean>(true);
+  const [optionMac, setOptionMac] = useState<boolean>(true);
 
   return (
     <div className="App">
@@ -238,9 +247,75 @@ function App() {
       <SelectMac>
         <h1>Qual é o Mac ideal para você?</h1>
 
+        <OptionsType>
+          <OptionType selected={optionMac} onClick={() => setOptionMac(true)}>
+            Notebook
+          </OptionType>
+          <OptionType selected={!optionMac} onClick={() => setOptionMac(false)}>
+            Desktop
+          </OptionType>
+        </OptionsType>
         <OptionsMac>
-          <OptionMac selected={optionMac} onClick={() => setOptionMac(true)}>Notebook</OptionMac>
-          <OptionMac selected={!optionMac}onClick={() => setOptionMac(false)}>Desktop</OptionMac>
+          <OptionMac>
+            <OptionMacImage src={mackBookImage} />
+            <ColorsOptionsMac>
+              <ColorOptionMac background="#565353"></ColorOptionMac>
+              <ColorOptionMac background="#a58236"></ColorOptionMac>
+              <ColorOptionMac background="#d8d8d8"></ColorOptionMac>
+            </ColorsOptionsMac>
+            <SpamDescriptionProduct
+              fontSize="11px"
+              marginTop="40px"
+            ></SpamDescriptionProduct>
+            <h1>MacBook Air</h1> <br />
+          </OptionMac>
+          <OptionMac>
+            <OptionMacImage src={mackBookImage} />
+
+            <ColorsOptionsMac>
+              <ColorOptionMac background="#565353"></ColorOptionMac>
+              <ColorOptionMac background="#a58236"></ColorOptionMac>
+              <ColorOptionMac background="#d8d8d8"></ColorOptionMac>
+            </ColorsOptionsMac>
+            <SpamDescriptionProduct fontSize="11px" marginTop="10px">
+              Novo
+            </SpamDescriptionProduct>
+            <h1>
+              MacBook Air <br /> Pro 13 pol
+            </h1>
+          </OptionMac>
+          <OptionMac>
+            <OptionMacImage src={mackBookImage} />
+
+            <ColorsOptionsMac>
+              <ColorOptionMac background="#565353"></ColorOptionMac>
+              <ColorOptionMac background="#a58236"></ColorOptionMac>
+              <ColorOptionMac background="#d8d8d8"></ColorOptionMac>
+            </ColorsOptionsMac>
+            <SpamDescriptionProduct fontSize="11px" marginTop="10px">
+              Novo
+            </SpamDescriptionProduct>
+
+            <h1>
+              MacBook Air <br /> Pro 13 pol
+            </h1>
+          </OptionMac>
+          <OptionMac>
+            <OptionMacImage src={mackBookImage} />
+
+            <ColorsOptionsMac>
+              <ColorOptionMac background="#565353"></ColorOptionMac>
+              <ColorOptionMac background="#a58236"></ColorOptionMac>
+              <ColorOptionMac background="#d8d8d8"></ColorOptionMac>
+            </ColorsOptionsMac>
+            <SpamDescriptionProduct fontSize="11px" marginTop="27px">
+            
+            </SpamDescriptionProduct>
+
+            <h1>
+              MacBook Air <br /> Pro 12 e 16 pol
+            </h1>
+          </OptionMac>
         </OptionsMac>
       </SelectMac>
     </div>

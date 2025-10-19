@@ -6,7 +6,8 @@ interface ImageProductAppleType {
 }
 interface SpamDescriptionProductType {
   marginTop?: string;
-  type?:string;
+  type?: string;
+  fontSize?: string;
 }
 
 interface PurchaseButtonType {
@@ -15,8 +16,14 @@ interface PurchaseButtonType {
   underline?: boolean;
 }
 
-interface OptionMacType{
-  selected: boolean
+interface OptionTypeInterface {
+  selected: boolean;
+  right?: boolean;
+  width?: string;
+}
+
+interface ColorOptionMacType {
+  background: string;
 }
 
 export const Header = styled.div`
@@ -81,7 +88,8 @@ export const TextOptionsProductApple = styled.a`
 export const SpamDescriptionProduct = styled.span<SpamDescriptionProductType>`
   font-family: MyriadProRegular;
   color: #f56300;
-  font-size: ${(props) => (props.marginTop === "span-new-option" ? "10px" : "17px")};
+  font-size: ${(props) =>
+    props.marginTop === "span-new-option" ? "10px" : "17px"};
   font-weight: ${(props) =>
     props.marginTop === "span-new-option" ? "400" : "bold"};
   position: ${(props) =>
@@ -216,36 +224,84 @@ export const BannerMacPro = styled.div`
 `;
 
 export const SelectMac = styled.div`
- padding:  100px 40px;
- height: 800px;
- display: flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- h1{
+  padding: 100px 40px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h1 {
     font-size: 40px;
     color: black;
     font-family: MyriadProRegular;
     font-weight: bold;
     margin-top: 2px;
- }
+  }
+`;
+
+export const OptionsType = styled.div`
+  height: 40px;
+  width: 210px;
+  border-bottom: 1px solid #d2d2d7;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+`;
+
+export const OptionType = styled.div<OptionTypeInterface>`
+  color: ${(props) => (props.selected ? "#1d1d1f" : "#6e6e73")};
+  font-family: "MyriadProRegular";
+  width: 95px;
+  height: 100%;
+  border-bottom: 1px solid
+    ${(props) => (props.selected ? "#1d1d1f" : "#6e6e73")};
+  font-size: 17px;
 `;
 
 export const OptionsMac = styled.div`
- height: 40px;
- width: 210px;
- border-bottom: 1px solid #d2d2d7;
- display: flex;
- flex-direction:row;
- justify-content:center;
- align-items:flex-start;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
 `;
 
-export const OptionMac = styled.div<OptionMacType>`
-  color: ${(props) => (props.selected ? '#1d1d1f' : '#6e6e73')};
-  font-family: 'MyriadProRegular';
-  width: 95px;
-  height: 100%;
-  border-bottom: 1px solid ${(props) => (props.selected ? '#1d1d1f' : '#6e6e73')};
-  font-size: 17px;
+export const OptionMac = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 70px;
+
+  h1{
+  font-size: 25px;
+  text-align:center;
+  margin-top: -1px;
+  }
+`;
+
+export const OptionMacImage = styled.img`
+  width: 163px;
+`;
+
+export const ColorsOptionsMac = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20px;
+  gap:5px;
+  width: 200px;
+`;
+
+export const ColorOptionMac = styled.div<ColorOptionMacType>`
+ width: 12px;
+ height: 12px;
+ border-radius: 50%;
+ background-color: ${(props) => props.background};
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
